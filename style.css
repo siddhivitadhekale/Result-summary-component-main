@@ -1,0 +1,209 @@
+@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Nunito:wght@200..1000&display=swap");
+
+:root {
+  --clr-primary-Light-Red: hsl(0, 100%, 67%, 0.1);
+  --clr-primary-Orange-Yellow: hsl(39, 100%, 56%, 0.1);
+  --clr-primary-Green-teal: hsl(166, 100%, 37%, 0.1);
+  --clr-primary-Cobalt-blue: hsl(234, 85%, 45%, 0.1);
+
+  --clr-gradient-Light-slate-blue-background: linear-gradient(
+    to bottom,
+    hsl(252, 100%, 67%),
+    hsl(241, 80%, 54%) 80%
+  );
+  --clr-gradient-Light-royal-blue-background: #2e2be9;
+  --clr-gradient-Violet-blue-circle: linear-gradient(
+    to bottom,
+    hsla(256, 72%, 46%, 1),
+    hsla(241, 72%, 46%, 0) 90%
+  );
+  --clr-gradient-Persian-blue-circle: #2421ca;
+
+  --clr-nutral-White: #ffffff;
+  --clr-nutral-Pale-blue: #ebf1ff;
+  --clr-nutral-Light-lavender: #c8c7ff;
+  --clr-nutral-Dark-gray-blue: #303b5a;
+
+  /* font size */
+  --fs-body: 1.125rem;
+  --fs-number: 3.5rem;
+  --ff: "Hanken Grotesk";
+  --font-weight-500: 500;
+  --font-weight-700: 700;
+  --font-weight-800: 800;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  display: inline-block;
+  max-width: 100%;
+}
+
+body {
+  font-family: var(--ff);
+  font-size: var(--fs-body);
+  font-weight: var(--font-weight-500);
+  color: var(--clr-nutral-Dark-gray-blue);
+  background-color: var(--clr-nutral-Pale-blue);
+}
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+/* utility classes */
+.flex {
+  display: flex;
+  align-items: center;
+}
+/* typography */
+.number {
+  font-size: 2.75rem;
+  color: var(--clr-nutral-White);
+  font-weight: var(--font-weight-800);
+}
+
+.remark {
+  color: var(--clr-nutral-Pale-blue);
+  font-weight: var(--font-weight-700);
+  font-size: 1.35rem;
+}
+.score {
+  font-weight: var(--font-weight-700);
+  color: var(--clr-nutral-Dark-gray-blue);
+}
+.score span {
+  color: var(--clr-nutral-Light-lavender);
+  font-weight: var(--font-weight-700);
+}
+.title {
+  font-size: 1.35rem;
+  font-weight: var(--font-weight-700);
+}
+
+.summary .title {
+  color: var(--clr-nutral-Dark-gray-blue);
+}
+
+/* components */
+.btn-summary {
+  display: inline-block;
+  width: 100%;
+  font: inherit;
+  color: var(--clr-nutral-Pale-blue);
+  border-radius: 999px;
+  padding: 0.8rem;
+  border: none;
+  background-color: var(--clr-nutral-Dark-gray-blue);
+  transition: 0.3s ease all;
+  cursor: pointer;
+}
+.btn-summary:hover {
+  background-color: var(--clr-gradient-Light-royal-blue-background);
+}
+
+/* layout styles */
+.wrapper {
+  justify-content: center;
+  height: 100dvh;
+}
+
+.container {
+  justify-content: center;
+  background: var(--clr-nutral-White);
+  border-radius: 1rem;
+}
+
+.container > * {
+  width: 18em;
+  height: 25em;
+  padding: 2.5rem;
+  flex-basis: 100%;
+}
+
+/* general styles */
+.result {
+  background: var(--clr-gradient-Light-slate-blue-background);
+  border-radius: 1rem;
+  text-align: center;
+  color: var(--clr-nutral-White);
+}
+.result * + * {
+  margin-top: 1.5rem;
+}
+.result-number {
+  max-width: 10rem;
+  margin-inline: auto;
+  padding: 2.75rem 2.5rem;
+  border-radius: 50%;
+  background: var(--clr-gradient-Violet-blue-circle);
+}
+
+.result-number p {
+  margin: 0;
+}
+.summary-wrapper {
+  gap: 1rem;
+  margin: 1.4rem 0;
+  flex-direction: column;
+}
+
+.summary-wrapper > * {
+  width: 100%;
+}
+.summary-item {
+  justify-content: space-between;
+}
+
+.summary-item-text {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.summary-item {
+  color: hsl(0, 100%, 67%);
+  padding: 0.8rem;
+  border-radius: 0.4rem;
+  background-color: var(--clr-primary-Light-Red);
+}
+
+.summary-wrapper > *:nth-child(2) {
+  color: hsl(39, 100%, 56%);
+  background-color: var(--clr-primary-Orange-Yellow);
+}
+.summary-wrapper > *:nth-child(3) {
+  color: hsl(166, 100%, 37%);
+  background-color: var(--clr-primary-Green-teal);
+}
+.summary-wrapper > *:nth-child(4) {
+  color: hsl(234, 85%, 45%);
+  background-color: var(--clr-primary-Cobalt-blue);
+}
+
+@media (max-width: 680px) {
+  .container {
+    flex-direction: column;
+  }
+  .container > * {
+    width: 100%;
+  }
+  .result {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+  .attribution {
+    margin-top: 4.5rem;
+    text-align: center;
+    font-size: 11px;
+  }
+}
